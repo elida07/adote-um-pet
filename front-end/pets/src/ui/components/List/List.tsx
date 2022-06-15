@@ -12,6 +12,7 @@ import { TextService } from '../../../data/services/TextService'
 
 interface ListProps{
     pets: Pet[];
+    onSelect: () => void;
 }
 
 export default function List(props: ListProps) {
@@ -30,6 +31,7 @@ export default function List(props: ListProps) {
                         <Button
                             variant={'contained'}
                             fullWidth
+                            onClick={() => props.onSelect(pet)}
                         >
                             Adotar {pet.name}
                         </Button>
